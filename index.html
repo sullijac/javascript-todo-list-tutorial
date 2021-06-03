@@ -1,34 +1,304 @@
-<!DOCTYPE html>
-<html lang=”en-GB” data-framework="javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport"
-  content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
   <title>TodoMVC Todo List Example in VanillaJS!</title>
-  <link rel="shortcut icon"
-  href="lib/favicon.ico" type="image/x-icon">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2022.3">
+  <style type="text/css">
+    body {background-color: #f2f2f2}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #0744b8; -webkit-text-stroke: #0744b8}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #15171a; color: rgba(21, 23, 26, 0.3); -webkit-text-stroke: rgba(21, 23, 26, 0.3); min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #1f762c; -webkit-text-stroke: #1f762c}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #06214f; -webkit-text-stroke: #06214f}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #1b1f22; -webkit-text-stroke: #1b1f22}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #57606a; -webkit-text-stroke: #57606a}
+    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #1b1f22; -webkit-text-stroke: #1b1f22; min-height: 14.0px}
+    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #1b1f22; -webkit-text-stroke: #1b1f22; background-color: #ffffff; min-height: 14.0px}
+    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Menlo; color: #1f762c; -webkit-text-stroke: #1f762c; background-color: #ffffff}
+    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 19.6px; font: 14.0px 'Helvetica Neue Light'; color: #3c3c3c; -webkit-text-stroke: #3c3c3c; min-height: 17.0px}
+    span.s1 {font-kerning: none; background-color: #ffffff}
+    span.s2 {font-kerning: none}
+    span.s3 {font-kerning: none; color: #1b1f22; background-color: #ffffff; -webkit-text-stroke: 0px #1b1f22}
+    span.s4 {font-kerning: none; color: #1f762c; background-color: #ffffff; -webkit-text-stroke: 0px #1f762c}
+    span.s5 {font-kerning: none; color: #06214f; background-color: #ffffff; -webkit-text-stroke: 0px #06214f}
+    span.s6 {font-kerning: none; color: #0744b8; background-color: #ffffff; -webkit-text-stroke: 0px #0744b8}
+    span.s7 {font-kerning: none; color: #cb2339; background-color: #ffffff; -webkit-text-stroke: 0px #cb2339}
+    span.s8 {font-kerning: none; color: #5b28b4; background-color: #ffffff; -webkit-text-stroke: 0px #5b28b4}
+    span.s9 {font-kerning: none; color: #1b1f22; -webkit-text-stroke: 0px #1b1f22}
+    table.t1 {border-collapse: collapse}
+    td.td1 {width: 1033.0px; padding: 0.0px 10.0px 0.0px 10.0px}
+    td.td2 {width: 50.0px; min-width: 50.0px; padding: 0.0px 10.0px 0.0px 10.0px}
+  </style>
 </head>
 <body>
-  <div id="app"></div>
-  <!-- CSS Styles are 100% optional. but they make it look *much* nicer -->
-  <link rel="stylesheet" href="lib/todomvc-common-base.css">
-  <link rel="stylesheet" href="lib/todomvc-app.css">
-  <script src="lib/elmish.js"></script>
-  <script src="lib/todo-app.js"></script>
-  <script>
-    var model = {
-      todos: [
-        // { id: 0, title: "Make something people want.", done: false },
-        // { id: 1, title: "Bootstrap for as long as you can", done: false },
-        // { id: 2, title: "Let's solve our own problem", done: false }
-      ],
-      hash: '#/', // the "route" to display
-      // editing: 2 // edit the 3rd todo list item (which has id == 2)
-    };
-    mount(model, update, view, 'app', subscriptions);
-  </script>
-
-  <!-- Below this point is all related to the Tests for the App -->
-  <div id="test-app"></div> <!-- Create a test-app div to mount the app -->
+<table cellspacing="0" cellpadding="0" class="t1">
+  <tbody>
+    <tr>
+      <td colspan="2" valign="top" class="td1">
+        <p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p1"><span class="s3">&lt;</span><span class="s4">html</span><span class="s3"> </span><span class="s1">lang</span><span class="s3">=</span><span class="s5">”en-GB”</span><span class="s3"> </span><span class="s1">data-framework</span><span class="s3">="</span><span class="s5">javascript</span><span class="s3">"&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s3">&lt;</span><span class="s1">head</span><span class="s3">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s3"><span class="Apple-converted-space">  </span>&lt;</span><span class="s4">meta</span><span class="s3"> </span><span class="s6">http-equiv</span><span class="s3">="</span><span class="s1">Content-Type</span><span class="s3">" </span><span class="s6">content</span><span class="s3">="</span><span class="s1">text/html; charset=UTF-8</span><span class="s3">"&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s3"><span class="Apple-converted-space">  </span>&lt;</span><span class="s4">meta</span><span class="s3"> </span><span class="s6">name</span><span class="s3">="</span><span class="s1">viewport</span><span class="s3">"</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s3"><span class="Apple-converted-space">  </span></span><span class="s6">content</span><span class="s3">="</span><span class="s1">width=device-width, initial-scale=1.0, user-scalable=yes</span><span class="s3">"&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><span class="Apple-converted-space">  </span>&lt;</span><span class="s4">title</span><span class="s1">&gt;Elm(ish) Todo List!&lt;/</span><span class="s4">title</span><span class="s1">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s3"><span class="Apple-converted-space">  </span>&lt;</span><span class="s4">link</span><span class="s3"> </span><span class="s6">rel</span><span class="s3">="</span><span class="s1">shortcut icon</span><span class="s3">"</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s3"><span class="Apple-converted-space">  </span></span><span class="s6">href</span><span class="s3">="</span><span class="s1">http://www.dwyl.io/images/favicon.ico</span><span class="s3">" </span><span class="s6">type</span><span class="s3">="</span><span class="s1">image/x-icon</span><span class="s3">"&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s3">&lt;/</span><span class="s1">head</span><span class="s3">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s3">&lt;</span><span class="s1">body</span><span class="s3">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><span class="Apple-converted-space">  </span>&lt;</span><span class="s4">div</span><span class="s1"> </span><span class="s6">id</span><span class="s1">="</span><span class="s5">app</span><span class="s1">"&gt;&lt;/</span><span class="s4">div</span><span class="s1">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p6"><span class="s3"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- CSS Styles are 100% optional. but they make it look *much* nicer --&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s3"><span class="Apple-converted-space">  </span>&lt;</span><span class="s4">link</span><span class="s3"> </span><span class="s6">rel</span><span class="s3">="</span><span class="s1">stylesheet</span><span class="s3">" </span><span class="s6">href</span><span class="s3">="</span><span class="s1">todomvc-common-base.css</span><span class="s3">"&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s3"><span class="Apple-converted-space">  </span>&lt;</span><span class="s4">link</span><span class="s3"> </span><span class="s6">rel</span><span class="s3">="</span><span class="s1">stylesheet</span><span class="s3">" </span><span class="s6">href</span><span class="s3">="</span><span class="s1">todomvc-app.css</span><span class="s3">"&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s3"><span class="Apple-converted-space">  </span>&lt;</span><span class="s1">script</span><span class="s3"> </span><span class="s6">src</span><span class="s3">="</span><span class="s5">elmish.js</span><span class="s3">"&gt;&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s3"><span class="Apple-converted-space">  </span>&lt;</span><span class="s1">script</span><span class="s3"> </span><span class="s6">src</span><span class="s3">="</span><span class="s5">todo-app.js</span><span class="s3">"&gt;&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s3"><span class="Apple-converted-space">  </span>&lt;</span><span class="s1">script</span><span class="s3">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s7">var</span><span class="s1"> model </span><span class="s6">=</span><span class="s1"> {</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span></span><span class="s6">todos</span><span class="s1">: [</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p4"><span class="s3"><span class="Apple-converted-space">        </span>{ </span><span class="s6">id</span><span class="s3">: </span><span class="s6">1</span><span class="s3">, </span><span class="s6">title</span><span class="s3">: </span><span class="s1">"Learn Elm Architecture"</span><span class="s3">, </span><span class="s6">done</span><span class="s3">: </span><span class="s6">true</span><span class="s3"> },</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{ </span><span class="s6">id</span><span class="s1">: </span><span class="s6">2</span><span class="s1">, </span><span class="s6">title</span><span class="s1">: </span><span class="s5">"Build Todo List App"</span><span class="s1">,<span class="Apple-converted-space">    </span></span><span class="s6">done</span><span class="s1">: </span><span class="s6">false</span><span class="s1"> },</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><span class="Apple-converted-space">        </span>{ </span><span class="s6">id</span><span class="s1">: </span><span class="s6">3</span><span class="s1">, </span><span class="s6">title</span><span class="s1">: </span><span class="s5">"Win the Internet!"</span><span class="s1">,<span class="Apple-converted-space">      </span></span><span class="s6">done</span><span class="s1">: </span><span class="s6">false</span><span class="s1"> }</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><span class="Apple-converted-space">      </span>],</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p6"><span class="s3"><span class="Apple-converted-space">      </span></span><span class="s6">hash</span><span class="s3">: </span><span class="s5">'#/'</span><span class="s3"> </span><span class="s1">// the "route" to display</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span>};</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p5"><span class="s1"><span class="Apple-converted-space">    </span></span><span class="s8">mount</span><span class="s1">(model, update, view, </span><span class="s5">'app'</span><span class="s1">);</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s3"><span class="Apple-converted-space">  </span>&lt;/</span><span class="s1">script</span><span class="s3">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td1">
+        <p class="p7"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p8"><span class="s2"></span><br></p>
+        <p class="p7"><span class="s2"></span><br></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p6"><span class="s3"><span class="Apple-converted-space">  </span></span><span class="s1">&lt;!-- Below this point is all related to the Tests for the App --&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p6"><span class="s3"><span class="Apple-converted-space">  </span>&lt;</span><span class="s4">div</span><span class="s3"> </span><span class="s6">id</span><span class="s3">="</span><span class="s5">test-app</span><span class="s3">"&gt;&lt;/</span><span class="s4">div</span><span class="s3">&gt; </span><span class="s1">&lt;!-- Create a test-app div to mount the app --&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p3"><span class="s3">&lt;/</span><span class="s1">body</span><span class="s3">&gt;</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" class="td2">
+        <p class="p2"><span class="s2"></span><br></p>
+      </td>
+      <td valign="top" class="td1">
+        <p class="p9"><span class="s9">&lt;/</span><span class="s2">html</span><span class="s9">&gt;</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p class="p10"><span class="s2"></span><br></p>
 </body>
 </html>
